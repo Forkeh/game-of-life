@@ -15,9 +15,12 @@ export default class Grid {
     }
 
     set(param1, value, param2) {
+        console.log("SET row", param1, "col:", param2, "value:", value);
+        
         const { row, col } = this.paramConversion(param1, param2);
 
         const cell = this.grid[row][col];
+        
 
         if (typeof cell === "number") {
             this.grid[row][col] = value;

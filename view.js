@@ -2,13 +2,20 @@ import * as controller from "./controller.js";
 
 export function init() {
     console.log("View kører");
+
     createBoardView();
+
     document.querySelector("#destroy-btn").addEventListener("click", destroyThemAllClick);
+
+    document.querySelector("#start-pause-btn").addEventListener("click", startPauseGameClick);
+}
+
+function startPauseGameClick() {
+    controller.startPauseGame();
 }
 
 function destroyThemAllClick() {
-    console.log("click");
-    controller.destroyThemAllEvent();
+    controller.destroyThemAll();
 }
 
 export function createBoardView() {
@@ -22,6 +29,7 @@ export function createBoardView() {
             cell.dataset.row = row;
             cell.dataset.col = col;
             cell.classList.add("cell");
+            cell.addEventListener("click", () => controller.createNewCell(row, col));
             board.appendChild(cell);
         }
     }
@@ -29,6 +37,14 @@ export function createBoardView() {
 
 export function updateBoardView(grid) {
     console.log("UPDATING VIEW", grid);
+
+    const button = document.querySelector("#start-pause-btn");
+
+    if (controller.isGameRunning) {
+        button.textContent = "Pause Game";
+    } else {
+        button.textContent = "Start Game";
+    }
 
     document.querySelector("#generation-counter").textContent = controller.generationCounter;
 
