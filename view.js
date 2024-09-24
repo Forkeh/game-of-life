@@ -36,8 +36,6 @@ export function createBoardView() {
 }
 
 export function updateBoardView(grid) {
-    console.log("UPDATING VIEW", grid);
-
     const button = document.querySelector("#start-pause-btn");
 
     if (controller.isGameRunning) {
