@@ -1,8 +1,8 @@
 import * as view from "./view.js";
 import * as model from "./model.js";
 
-export const GRID_WIDTH = 50;
-export const GRID_HEIGHT = 50;
+export const GRID_ROWS = 5;
+export const GRID_COLS = 5;
 
 init();
 
@@ -10,12 +10,11 @@ function init() {
     console.log("Controller kører");
     model.init();
     view.init();
-    view.createView();
+    view.createBoardView();
+    model.createModel(GRID_ROWS, GRID_COLS);
+    updateBoardView();
 }
 
-
-export function createModel() {
-    // TODO
+export function updateBoardView() {
+    view.updateBoardView(model.grid);
 }
-
-
