@@ -1,9 +1,10 @@
 import * as view from "./view.js";
 import * as model from "./model.js";
 
-export const GRID_ROWS = 20;
-export const GRID_COLS = 20;
+export const GRID_ROWS = 40;
+export const GRID_COLS = 40;
 export const SPAWN_CHANCE = 0.5
+export let GENERATIONS = 0;
 
 init();
 
@@ -18,6 +19,7 @@ function init() {
     setInterval(() => {
         model.getNextGeneration(GRID_ROWS, GRID_COLS);
         updateBoardView();
+        GENERATIONS++;
     }, 500);
 }
 

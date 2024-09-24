@@ -42,14 +42,6 @@ function countNeighbours(row, col) {
 }
 
 export function getNextGeneration(rows, cols) {
-    //     lav en nyt tomt grid kaldet nextGeneration
-    // scan igennem den eksisterende model
-    //  for hver celle:
-    //    beregn antal naboer
-    //    beslut hvad der skal ske
-    //    skriv resultatet ind i nextGeneration
-
-    // erstat model med nextGeneration
     console.log("------------------------");
     console.log("NEXT GEN");
     console.log("------------------------");
@@ -59,9 +51,7 @@ export function getNextGeneration(rows, cols) {
     for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
             const value = grid.get(row, col);
-            console.log("VALUE:", value);
             const nbrs = countNeighbours(row, col);
-            console.log("nbrs:", nbrs);
 
             let newValue;
 
@@ -74,7 +64,8 @@ export function getNextGeneration(rows, cols) {
             if (nbrs === 3) {
                 newValue = 1;
             }
-            console.log("newValue:", newValue);
+            console.log("row:", row, "col:", col, "nbrs:", nbrs, "oldValue", value, "newValue:", newValue);
+
 
             nextGenGrid.set(row, newValue, col);
         }

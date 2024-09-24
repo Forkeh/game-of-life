@@ -26,7 +26,7 @@ export default class Grid {
 
     get(param1, param2) {
         const { row, col } = this.paramConversion(param1, param2);
-        console.log("GET row:", row, "col:", col);
+        // console.log("GET row:", row, "col:", col);
         
 
         // Check if out of bounds

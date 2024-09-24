@@ -13,6 +13,10 @@ h1 {
     font-size: 250%;
 }
 
+h2 {
+    text-align: center;
+}
+
 #board {
     --GRID_WIDTH: 1;
     display: grid;

@@ -23,6 +23,8 @@ export function createBoardView() {
 export function updateBoardView(grid) {
     console.log("UPDATING VIEW", grid);
 
+    document.querySelector("#generation-counter").textContent = controller.GENERATIONS;
+
     for (let row = 0; row < controller.GRID_ROWS; row++) {
         for (let col = 0; col < controller.GRID_COLS; col++) {
             const value = grid.get(row, col);
