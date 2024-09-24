@@ -5,7 +5,7 @@ export default class Grid {
         for (let row = 0; row < newGrid.length; row++) {
             newGrid[row] = new Array(cols).fill(0);
         }
-        console.log(newGrid);
+        // console.log(newGrid);
 
         this.grid = newGrid;
     }
@@ -26,6 +26,8 @@ export default class Grid {
 
     get(param1, param2) {
         const { row, col } = this.paramConversion(param1, param2);
+        console.log("GET row:", row, "col:", col);
+        
 
         // Check if out of bounds
         if (row >= this.rows() || row < 0 || col >= this.cols() || col < 0) {
