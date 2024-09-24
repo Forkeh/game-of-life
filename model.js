@@ -8,7 +8,14 @@ export let grid;
 
 export function createModel(rows, cols) {
     grid = new Grid(rows, cols);
-    grid.set(0,1, 0);
+
+    for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+            if (Math.random() < 0.15) {
+                grid.set(row, 1, col);
+            }
+        }
+    }
+
     console.table(grid);
-    
 }
