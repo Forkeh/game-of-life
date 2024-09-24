@@ -70,7 +70,7 @@ export function getNextGeneration(rows, cols) {
             nextGenGrid.set(row, newValue, col);
         }
     }
-    console.log("oldGrid:", grid);
+    // console.log("oldGrid:", grid);
     grid = nextGenGrid;
-    console.log("nexgGenGrid:", grid);
+    // console.log("nexgGenGrid:", grid);
 }

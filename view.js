@@ -2,6 +2,13 @@ import * as controller from "./controller.js";
 
 export function init() {
     console.log("View kører");
+    createBoardView();
+    document.querySelector("#destroy-btn").addEventListener("click", destroyThemAllClick);
+}
+
+function destroyThemAllClick() {
+    console.log("click");
+    controller.destroyThemAllEvent();
 }
 
 export function createBoardView() {
@@ -23,7 +30,7 @@ export function createBoardView() {
 export function updateBoardView(grid) {
     console.log("UPDATING VIEW", grid);
 
-    document.querySelector("#generation-counter").textContent = controller.GENERATIONS;
+    document.querySelector("#generation-counter").textContent = controller.generationCounter;
 
     for (let row = 0; row < controller.GRID_ROWS; row++) {
         for (let col = 0; col < controller.GRID_COLS; col++) {
