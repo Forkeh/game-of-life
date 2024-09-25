@@ -1,26 +1,78 @@
+:root {
+    --light-green: #b4ffaa;
+    --medium-green: #8ac783;
+    --dark-green: #151f14;
+    --secondary-color: #f5aaff;
+}
+
 html,
 body {
-    background-color: beige;
-
-    height: 100%;
+    background-color: black;
+    color: var(--light-green);
+    font-family: "Courier New", Courier, monospace;
     margin: 0;
     padding: 0;
 }
 
 h1 {
     text-align: center;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 250%;
+    font-size: 300%;
+    font-weight: bold;
+    filter: drop-shadow(5px 5px 5px #4d6e49);
 }
 
 h2 {
     text-align: center;
+    color: var(--secondary-color);
 }
 
-.buttons {
+button {
+    padding: 1em;
+    font-family: "Courier New", Courier, monospace;
+    margin: 1em 1em;
+    background-color: #243623;
+    font-weight: 900;
+    font-size: 110%;
+    border-radius: 3px;
+    color: var(--light-green);
+    transition: all 0.1s ease-in;
+    border-color: var(--light-green);
+}
+
+button:hover {
+    background-color: var(--medium-green);
+    color: var(--dark-green);
+}
+
+.info-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     text-align: center;
-    padding: 0.5rem;
-    line-height: 2rem;
+    background-color: var(--dark-green);
+    width: 30rem;
+    margin: auto;
+    outline: var(--light-green) solid 2px;
+    border-radius: 3px;
+    padding: 1rem;
+    gap: 2rem;
+    font-size: 90%;
+    color: var(--medium-green)
+}
+
+.generation-container {
+    width: 10rem;
+}
+
+#generation-counter {
+    font-size: 200%;
+    font-weight: 700;
+    color: var(--light-green);
+}
+
+.buttons-container {
+    text-align: center;
+    padding: 0.4rem;
 }
 
 #board {
@@ -28,20 +80,24 @@ h2 {
     display: grid;
     grid-template-columns: repeat(var(--GRID_WIDTH), max-content);
     gap: 1px;
-    /* height: 100vh;
-    width: 100vh; */
+    width: fit-content;
     justify-content: center;
+    margin: auto;
+    outline: var(--light-green) solid 2px;
+    box-shadow: 5px 5px 15px var(--dark-green);
+    background-color: black;
+    border-radius: 3px;
 }
 
 .cell {
-    background-color: white;
-    height: 14px;
-    width: 14px;
-    outline: 1px solid darkgrey;
+    background-color: #202e1e;
+    height: 13px;
+    width: 13px;
+    border-radius: 2px;
 }
 
 .cell-active {
-    background-color: black;
+    background-color: var(--light-green);
     /* animation: fade-in 0.2s ease-in-out; */
 }
 
