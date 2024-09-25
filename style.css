@@ -39,3 +39,17 @@ h2 {
     width: 14px;
     outline: 1px solid darkgrey;
 }
+
+.cell-active {
+    background-color: black;
+    /* animation: fade-in 0.2s ease-in-out; */
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -54,18 +54,16 @@ export function getNextGeneration(rows, cols) {
             const nbrs = countNeighbours(row, col);
 
             let newValue;
-
-            if (nbrs < 2 || nbrs > 3) {
-                newValue = 0;
-            }
-            if (nbrs === 2) {
-                newValue = value;
-            }
-            if (nbrs === 3) {
-                newValue = 1;
+            if (value === 1 && (nbrs < 2 || nbrs > 3)) {
+                newValue = 0; // Underpopulation or overpopulation
+            } else if (value === 1 && (nbrs === 2 || nbrs === 3)) {
+                newValue = 1; // Stays alive
+            } else if (value === 0 && nbrs === 3) {
+                newValue = 1; // Reproduction
+            } else {
+                newValue = 0; // Remains dead
             }
             console.log("row:", row, "col:", col, "nbrs:", nbrs, "oldValue", value, "newValue:", newValue);
-
 
             nextGenGrid.set(row, newValue, col);
         }

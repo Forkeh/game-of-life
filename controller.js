@@ -1,9 +1,11 @@
 import * as view from "./view.js";
 import * as model from "./model.js";
 
+// =========== Game settings =========== //
 export const GRID_ROWS = 40;
 export const GRID_COLS = 40;
-export const SPAWN_CHANCE = 0.5;
+export const SPAWN_CHANCE = 0.4;
+const INTERVAL_IN_MILLISECONDS = 200
 export let generationCounter = 0;
 export let isGameRunning = true;
 let gameInterval;
@@ -35,7 +37,7 @@ export function startGame() {
         model.getNextGeneration(GRID_ROWS, GRID_COLS);
         updateBoardView();
         generationCounter++;
-    }, 1000);
+    }, INTERVAL_IN_MILLISECONDS);
 }
 
 export function pauseGame() {

@@ -81,9 +81,9 @@ export function updateBoardView(grid) {
             const visualCell = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
 
             if (value === 1) {
-                visualCell.style.setProperty("background-color", "black");
+                visualCell.classList.add("cell-active");
             } else if (value === 0) {
-                visualCell.style.setProperty("background-color", "white");
+                visualCell.classList.remove("cell-active");
             }
         }
     }
