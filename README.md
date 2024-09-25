@@ -1,3 +1,5 @@
+Deployment: https://forkeh.github.io/game-of-life/
+
 An implemention of Game Of Life.
 
 - Includes a button to destroy all current living cells.
