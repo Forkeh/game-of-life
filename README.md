@@ -12,6 +12,6 @@
 - Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 
 ### Features
-- Includes a button to destroy all current living cells.
 - A button to start/pause the game.
+- A button to destroy all current living cells.
 - The ability to "draw" on the board with the mouse, to create new cells.
